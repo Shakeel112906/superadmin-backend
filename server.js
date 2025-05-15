@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const cors = require('cors'); // ✅ CORS import
 const authRoutes = require('./routes/authRoutes');
 const connectDB = require('./config/db');
+const passwordRoutes = require('./routes/passwordRoutes');
 
 dotenv.config();
 
@@ -19,7 +20,6 @@ app.use(cors({
 app.use('/api/auth', authRoutes);
 connectDB(); // ✅ Connect to MongoDB before app starts
 
-const passwordRoutes = require('./routes/passwordRoutes');
 app.use('/api/password', passwordRoutes);
 
 
